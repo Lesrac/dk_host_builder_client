@@ -1,0 +1,15 @@
+<h2>Kindreds</h2>
+<ul class="kindreds">
+  <li *ngFor="let kindred of kindreds"
+      [class.selected]="kindred === selectedKindred"
+      (click)="onSelect(kindred)">
+    <span class="badge">{{kindred.id}}</span>
+    <span>{{kindred.name}}</span>
+  </li>
+</ul>
+<div *ngIf="selectedKindred">
+  <h2>
+    {{selectedKindred.name | uppercase}}
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

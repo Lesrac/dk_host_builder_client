@@ -1,0 +1,20 @@
+<div>
+  <div class="left">
+    Results
+    <div *ngFor="let warrior of warriors | async">
+      {{warrior.name}}
+    </div>
+  </div>
+  <div class="tokens">
+    Tokens
+    <ul>
+      <li *ngFor="let token of tokens"
+          [class.selected]="addedTokens.indexOf(token) > -1"
+          (click)="onSelect(token)">
+        <span class="badge" *ngIf="addedTokens.indexOf(token) === -1">+</span>
+        <span class="badgeRemove" *ngIf="addedTokens.indexOf(token) > -1">-</span>
+        <span>{{token.name}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
