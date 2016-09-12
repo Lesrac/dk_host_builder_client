@@ -13,6 +13,7 @@ import {DarklandsService} from './services/darklands.service';
 import {TokenSearchService} from "./services/token-search.service";
 import {TokenSearchComponent} from "./token/token-search.component";
 import {KindredDetailComponent} from "./kindred/kindred-detail.component";
+import {WarriorsComponent} from "./warrior/warriors.component";
 
 @NgModule({
     imports: [
@@ -25,7 +26,8 @@ import {KindredDetailComponent} from "./kindred/kindred-detail.component";
         AppComponent,
         KindredsComponent,
         TokenSearchComponent,
-        KindredDetailComponent
+        KindredDetailComponent,
+        WarriorsComponent
     ],
     bootstrap: [AppComponent],
     providers: [

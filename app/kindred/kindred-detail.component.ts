@@ -4,6 +4,7 @@ import {Kindred} from "../data/kindred";
 import {DarklandsService} from "../services/darklands.service";
 import {ActivatedRoute, Params} from "@angular/router";
 import {Warrior} from "../data/warrior";
+import {Observable} from "rxjs";
 
 @Component({
     selector: 'my-kindred-detail',
@@ -12,7 +13,7 @@ import {Warrior} from "../data/warrior";
 })
 export class KindredDetailComponent implements OnInit {
     kindred: Kindred;
-    warriors: Warrior[];
+    warriors: Observable<Warrior[]>;
 
     constructor(private darklandsService: DarklandsService,
                 private route: ActivatedRoute) {
@@ -36,7 +37,7 @@ export class KindredDetailComponent implements OnInit {
 
     getWarriors(): void {
         this.darklandsService.getWarriorsByKindred(this.kindred.id)
-            .then(warriors => this.warriors = warriors);
+            .then(warriors => this.warriors = Observable.of(warriors));
     }
 
     goBack(): void {

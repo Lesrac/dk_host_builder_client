@@ -1,11 +1,7 @@
 <div>
   <div class="leftgrid">
     <div>Results</div>
-    <div *ngFor="let warrior of warriors | async" class="col-1-4">
-      <div class="module kindred">
-        {{warrior.name}}
-      </div>
-    </div>
+    <my-warriors [warriors]="warriors"></my-warriors>
   </div>
   <div class="tokens">
     Tokens
