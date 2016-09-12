@@ -4,12 +4,14 @@ import {Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import {Kindred} from './../data/kindred';
+import {Warrior} from "../data/warrior";
 
 @Injectable()
 export class DarklandsService {
 
     private baseUrl = 'http://localhost:8080/Darklands_Host_Builder';
     private kindredUrl = this.baseUrl + '/kindred';
+    private warriorByKindredUrl = this.baseUrl + '/warrior';
 
     constructor(private http: Http) {
     }
@@ -17,9 +19,19 @@ export class DarklandsService {
     getKindreds(): Promise<Kindred[]> {
         return this.http.get(this.kindredUrl)
             .toPromise()
-            .then(response => {
-                return response.json() as Kindred[];
-            })
+            .then(response => response.json() as Kindred[])
+            .catch(this.handleError);
+    }
+
+    getKindred(id: number): Promise<Kindred> {
+        return this.getKindreds().then(kindreds => kindreds.find(kindred => kindred.id === id));
+    }
+
+    getWarriorsByKindred(kindred_id: number): Promise<Warrior[]> {
+        const url = `${this.warriorByKindredUrl}/${kindred_id}`;
+        return this.http.get(url)
+            .toPromise()
+            .then(response => response.json() as Warrior[])
             .catch(this.handleError);
     }
 

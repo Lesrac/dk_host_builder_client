@@ -1,0 +1,14 @@
+<div *ngIf="kindred">
+  <h2>{{kindred.name}} details!</h2>
+  <div>
+    <label>id: </label>{{kindred.id}}
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let warrior of warriors">
+        <span>{{warrior.name}}</span>
+      </li>
+    </ul>
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>

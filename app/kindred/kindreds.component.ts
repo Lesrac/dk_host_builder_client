@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core'
 
 import {Kindred} from "../data/kindred";
 import {DarklandsService} from "../services/darklands.service";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'my-kindreds',
@@ -10,9 +11,9 @@ import {DarklandsService} from "../services/darklands.service";
 })
 export class KindredsComponent implements OnInit {
     kindreds: Kindred[];
-    selectedKindred: Kindred;
 
-    constructor(private darklandsService: DarklandsService) {
+    constructor(private router: Router,
+                private darklandsService: DarklandsService) {
 
     }
 
@@ -21,15 +22,23 @@ export class KindredsComponent implements OnInit {
     }
 
     getKindreds(): void {
-        this.darklandsService.getKindreds().then(kindreds => this.kindreds = kindreds);
-        console.log(this.kindreds);
+        this.darklandsService.getKindreds().then(
+            kindreds => {
+                this.kindreds = kindreds.sort((l: Kindred, r: Kindred) => {
+                    if (l.name < r.name) {
+                        return -1;
+                    }
+                    if (l.name > r.name) {
+                        return 1;
+                    }
+                    return 0;
+                });
+                console.log(this.kindreds);
+            }
+        );
     }
 
-    onSelect(kindred: Kindred): void {
-        this.selectedKindred = kindred;
-    }
-
-    gotoDetail(): void {
-
+    gotoDetail(kindred: Kindred): void {
+        this.router.navigate(['/kindred/detail', kindred.id]);
     }
 }

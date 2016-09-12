@@ -2,6 +2,7 @@ import {ModuleWithProviders}  from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {KindredsComponent} from "./kindred/kindreds.component";
 import {TokenSearchComponent} from "./token/token-search.component";
+import {KindredDetailComponent} from "./kindred/kindred-detail.component";
 
 const appRoutes: Routes = [
     {
@@ -12,6 +13,10 @@ const appRoutes: Routes = [
     {
         path: 'kindreds',
         component: KindredsComponent
+    },
+    {
+        path: 'kindred/detail/:id',
+        component: KindredDetailComponent
     },
     {
         path: 'tokensearch',
