@@ -1,0 +1,55 @@
+<div *ngIf="!warrior">Loading!</div>
+
+<div *ngIf="warrior">
+  <h2>{{warrior.name}}</h2>
+  <h5>{{warrior.spelling}}</h5>
+  <h3>From {{warrior.kindred.name}}</h3>
+  <table>
+    <tr>
+      <th>Kindred</th>
+      <th>Realm</th>
+      <th>Kin</th>
+      <th>Class</th>
+      <th>Privilege</th>
+      <th>Acuity</th>
+      <th>Ubiquity</th>
+      <th>Hands</th>
+      <th>
+        <table>
+          <tr>
+            <th>Unit Size</th>
+          </tr>
+          <tr>
+            <td *ngIf="warrior.unitSizeMin === warrior.unitSizeMax">{{warrior.unitSizeMin}}</td>
+            <td *ngIf="warrior.unitSizeMin !== warrior.unitSizeMax">{{warrior.unitSizeMin}}-{{warrior.unitSizeMax}}</td>
+          </tr>
+        </table>
+      </th>
+      <th>Cost</th>
+    </tr>
+    <tr>
+      <td>{{warrior.kindred.name}}</td>
+      <td>blub</td>
+      <td *ngIf="kins">{{kins}}</td>
+      <td *ngIf="!kins">loading</td>
+      <td>blub</td>
+      <td>blub</td>
+      <td></td>
+      <td>
+      </td>
+      <td>{{warrior.hands}}</td>
+      <td>
+        <table>
+          <tr>
+            <th>Base Size</th>
+          </tr>
+          <tr>
+            <td>{{warrior.baseSize}} mm</td>
+          </tr>
+        </table>
+      </td>
+      <td>{{warrior.cost}}</td>
+    </tr>
+  </table>
+  <button (click)="goBack()">Back</button>
+</div>

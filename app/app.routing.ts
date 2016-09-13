@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {KindredsComponent} from "./kindred/kindreds.component";
 import {TokenSearchComponent} from "./token/token-search.component";
 import {KindredDetailComponent} from "./kindred/kindred-detail.component";
+import {WarriorDetailComponent} from "./warrior/warrior-detail.component";
 
 const appRoutes: Routes = [
     {
@@ -17,6 +18,10 @@ const appRoutes: Routes = [
     {
         path: 'kindred/detail/:id',
         component: KindredDetailComponent
+    },
+    {
+        path: 'kindred/warriors/:id',
+        component: WarriorDetailComponent
     },
     {
         path: 'tokensearch',

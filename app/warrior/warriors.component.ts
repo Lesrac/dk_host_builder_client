@@ -3,6 +3,7 @@ import {Component, OnInit, Input} from '@angular/core';
 import {DarklandsService} from "../services/darklands.service";
 import {Warrior} from "../data/warrior";
 import {Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -14,12 +15,15 @@ export class WarriorsComponent implements OnInit {
     @Input()
     warriors: Observable<Warrior[]>;
 
-    constructor(private darklandsService: DarklandsService) {
+    constructor(private router: Router,
+                private darklandsService: DarklandsService) {
 
     }
 
     ngOnInit(): void {
     }
 
-
+    gotoDetail(warrior: Warrior): void {
+        this.router.navigate(['/kindred/warriors', warrior.id]);
+    }
 }

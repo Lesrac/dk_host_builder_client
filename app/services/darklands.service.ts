@@ -5,13 +5,14 @@ import 'rxjs/add/operator/toPromise';
 
 import {Kindred} from './../data/kindred';
 import {Warrior} from "../data/warrior";
+import {Realm} from "../data/realm";
 
 @Injectable()
 export class DarklandsService {
 
     private baseUrl = 'http://localhost:8080/Darklands_Host_Builder';
     private kindredUrl = this.baseUrl + '/kindred';
-    private warriorByKindredUrl = this.baseUrl + '/warrior';
+    private warriorsUrl = this.baseUrl + '/warrior';
 
     constructor(private http: Http) {
     }
@@ -28,10 +29,36 @@ export class DarklandsService {
     }
 
     getWarriorsByKindred(kindred_id: number): Promise<Warrior[]> {
-        const url = `${this.warriorByKindredUrl}/${kindred_id}`;
+        const url = `${this.warriorsUrl}/kindred/${kindred_id}`;
         return this.http.get(url)
             .toPromise()
             .then(response => response.json() as Warrior[])
+            .catch(this.handleError);
+    }
+
+    getWarriors(): Promise<Warrior[]> {
+        return this.http.get(this.warriorsUrl)
+            .toPromise()
+            .then(response => response.json() as Warrior[])
+            .catch(this.handleError);
+    }
+
+    getWarrior(id: number): Promise<Warrior> {
+        const url = `${this.warriorsUrl}/${id}`;
+        return this.http.get(url)
+            .toPromise()
+            .then(response => response.json() as Warrior)
+            .catch(this.handleError);
+    }
+
+    getWarriorRealmInfo(warrior_id: number): Promise<Realm> {
+        const url = `${this.warriorsUrl}/${warrior_id}/realm`;
+        return this.http.get(url)
+            .toPromise()
+            .then(response => {
+                console.log(response);
+                return response.json() as Realm;
+            })
             .catch(this.handleError);
     }
 
