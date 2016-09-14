@@ -29,7 +29,8 @@
     </tr>
     <tr>
       <td>{{warrior.kindred.name}}</td>
-      <td>blub</td>
+      <td *ngIf="realms">{{realms}}</td>
+      <td *ngIf="!realms">loading!</td>
       <td *ngIf="kins">{{kins}}</td>
       <td *ngIf="!kins">loading</td>
       <td>blub</td>

@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import {Kindred} from './../data/kindred';
 import {Warrior} from "../data/warrior";
 import {Realm} from "../data/realm";
+import {WarriorUbiquity} from "../data/warrior-ubiquity";
 
 @Injectable()
 export class DarklandsService {
@@ -51,13 +52,13 @@ export class DarklandsService {
             .catch(this.handleError);
     }
 
-    getWarriorRealmInfo(warrior_id: number): Promise<Realm> {
+    getWarriorRealmInfo(warrior_id: number): Promise<WarriorUbiquity[]> {
         const url = `${this.warriorsUrl}/${warrior_id}/realm`;
         return this.http.get(url)
             .toPromise()
             .then(response => {
                 console.log(response);
-                return response.json() as Realm;
+                return response.json() as WarriorUbiquity[];
             })
             .catch(this.handleError);
     }

@@ -5,6 +5,7 @@ import {Params, ActivatedRoute} from "@angular/router";
 import {Warrior} from "../data/warrior";
 import {Kin} from "../data/kin";
 import {Realm} from "../data/realm";
+import {WarriorUbiquity} from "../data/warrior-ubiquity";
 
 @Component({
     selector: 'my-warrior-detail',
@@ -14,8 +15,9 @@ import {Realm} from "../data/realm";
 export class WarriorDetailComponent implements OnInit {
 
     warrior: Warrior;
-    realm: Realm;
+    warrior_ubiquities: WarriorUbiquity[];
     kins: string = "";
+    realms: string = "";
 
     constructor(private route: ActivatedRoute,
                 private darklandsService: DarklandsService) {
@@ -50,11 +52,17 @@ export class WarriorDetailComponent implements OnInit {
             let id = +params['id'];
             this.darklandsService.getWarriorRealmInfo(id)
                 .then(realm => {
-                    this.realm = realm;
+                    this.warrior_ubiquities = realm;
                     console.log("Realm:");
                     console.log(realm);
+                    console.log(this.warrior_ubiquities);
+                    this.warrior_ubiquities.forEach(this.buildRealm, this);
                 });
         });
+    }
+
+    buildRealm(warrior_ubiquity: WarriorUbiquity): void {
+        this.realms += warrior_ubiquity.realm.name;
     }
 
     goBack(): void {
