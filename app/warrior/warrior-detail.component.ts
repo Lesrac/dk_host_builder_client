@@ -5,6 +5,7 @@ import {Params, ActivatedRoute} from "@angular/router";
 import {Warrior} from "../data/warrior";
 import {Kin} from "../data/kin";
 import {WarriorUbiquity} from "../data/warrior-ubiquity";
+import {Realm} from "../data/realm";
 
 @Component({
     selector: 'my-warrior-detail',
@@ -56,8 +57,10 @@ export class WarriorDetailComponent implements OnInit {
                     console.log("Realm:");
                     console.log(realm);
                     console.log(this.warrior_ubiquities);
-                    this.warrior_ubiquities.forEach(this.buildRealms, this);
-                    this.warrior_ubiquities.forEach(this.buildUbiquities, this);
+                    for (let i in this.warrior_ubiquities) {
+                        this.buildRealms(this.warrior_ubiquities[i]);
+                        this.buildUbiquities(this.warrior_ubiquities[i], +i == this.warrior_ubiquities.length - 1);
+                    }
                 });
         });
     }
@@ -68,14 +71,12 @@ export class WarriorDetailComponent implements OnInit {
         }
     }
 
-    buildUbiquities(warrior_ubiquity: WarriorUbiquity, index: number, array: WarriorUbiquity[]): void {
+    buildUbiquities(warrior_ubiquity: WarriorUbiquity, lastElement: boolean): void {
         this.ubiquities += warrior_ubiquity.ubiquity.name;
-        console.log("Index: " + index);
-        console.log(array);
         if (warrior_ubiquity.ubiquity_amount > 1) {
             this.ubiquities += " (" + warrior_ubiquity.ubiquity_amount + ")";
         }
-        if (index < array.length - 1) {
+        if (!lastElement) {
             this.ubiquities += " + ";
         }
     }
