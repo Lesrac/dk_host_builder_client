@@ -36,8 +36,8 @@
       <td>blub</td>
       <td>blub</td>
       <td></td>
-      <td>
-      </td>
+      <td *ngIf="ubiquities">{{ubiquities}}</td>
+      <td *ngIf="!ubiquities">loading</td>
       <td>{{warrior.hands}}</td>
       <td>
         <table>

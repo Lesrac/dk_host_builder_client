@@ -1,0 +1,12 @@
+table {
+    width: 80%;
+    vertical-align: middle;
+    border: thin;
+    border-style: solid;
+}
+
+td {
+    width: 10%;
+    vertical-align: middle;
+    text-align: center;
+}
