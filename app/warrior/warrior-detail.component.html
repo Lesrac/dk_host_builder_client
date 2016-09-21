@@ -29,15 +29,26 @@
     </tr>
     <tr>
       <td>{{warrior.kindred.name}}</td>
-      <td *ngIf="realms">{{realms}}</td>
+      <td *ngIf="realms">
+        <span *ngFor="let realm of realms">
+          {{realm.name}}
+        </span>
+      </td>
       <td *ngIf="!realms">loading!</td>
-      <td *ngIf="kins">{{kins}}</td>
-      <td *ngIf="!kins">loading</td>
-      <td>blub</td>
-      <td>blub</td>
-      <td></td>
-      <td *ngIf="ubiquities">{{ubiquities}}</td>
-      <td *ngIf="!ubiquities">loading</td>
+      <td>
+        <span *ngFor="let kin of warrior.kin">{{kin.name}}</span>
+      </td>
+      <td>
+        <span *ngFor="let wclass of warrior.warriorClass">{{wclass.name}}</span>
+      </td>
+      <td>{{warrior.privilege.name}}</td>
+      <td>{{warrior.acuity.name}}</td>
+      <td>
+        <span *ngFor="let uarray of warrior.ubiquities; let l = last">
+          {{uarray.ubiquity.name}} <span *ngIf="uarray.ubiquity_amount > 1">({{uarray.ubiquity_amount}})</span>
+          <span *ngIf="!l"> + </span>
+        </span>
+      </td>
       <td>{{warrior.hands}}</td>
       <td>
         <table>
