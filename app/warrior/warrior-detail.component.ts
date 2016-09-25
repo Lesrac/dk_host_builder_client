@@ -2,7 +2,6 @@ import {Component, OnInit} from "@angular/core";
 import {DarklandsService} from "../services/darklands.service";
 import {Params, ActivatedRoute} from "@angular/router";
 import {Warrior} from "../data/warrior";
-import {Kin} from "../data/kin";
 import {WarriorUbiquity} from "../data/warrior-ubiquity";
 import {Realm} from "../data/realm";
 

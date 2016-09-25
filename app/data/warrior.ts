@@ -1,6 +1,5 @@
 import {Kindred} from "./kindred";
 import {Profile} from "./profile";
-import {Ubiquity} from "./ubiquity";
 import {Kin} from "./kin";
 import {WarriorClass} from "./warrior-class";
 import {WarriorUbiquity} from "./warrior-ubiquity";
@@ -10,8 +9,8 @@ export class Warrior {
     id: number;
     name: string;
     hands: number;
-    unitSizeMin: number;
-    unitSizeMax: number;
+    uniteSizeMin: number;
+    uniteSizeMax: number;
     baseSize: number;
     cost: number;
     spelling: string;
