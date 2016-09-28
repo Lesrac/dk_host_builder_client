@@ -45,16 +45,10 @@ export class WarriorDetailComponent implements OnInit {
     }
 
     getStyle(value: number): string {
-        if (value % 100 == 0 && this.warrior.profile.constitution_markers.indexOf(value) != -1) {
-            return "";
-        }
-        if (value % 100 == 0) {
-            return "breaker";
-        }
         if (this.warrior.profile.constitution_markers.indexOf(value) != -1) {
-            return "marker";
+            return "flex-item-marker";
         }
-        return "";
+        return "flex-item";
     }
 
     goBack(): void {
