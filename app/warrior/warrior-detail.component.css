@@ -76,3 +76,7 @@ td {
 .filler {
     width: auto;
 }
+
+.smalltext {
+    font-size: small;
+}

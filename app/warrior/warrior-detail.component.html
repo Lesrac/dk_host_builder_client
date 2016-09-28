@@ -74,7 +74,9 @@
       <th class="profilevalue">Temper</th>
     </tr>
     <tr>
-      <td colspan="3"></td>
+      <td colspan="3">
+        <span *ngFor="let rule of warrior.profile.specialRules" class="smalltext">{{rule.name}}; </span>
+      </td>
       <td>{{warrior.profile.pace}}</td>
       <td>{{warrior.profile.skill}}</td>
       <td>{{warrior.profile.might}}</td>
