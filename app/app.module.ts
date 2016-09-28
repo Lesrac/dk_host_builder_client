@@ -15,6 +15,7 @@ import {TokenSearchComponent} from "./token/token-search.component";
 import {KindredDetailComponent} from "./kindred/kindred-detail.component";
 import {WarriorsComponent} from "./warrior/warriors.component";
 import {WarriorDetailComponent} from "./warrior/warrior-detail.component";
+import {ConstitutionPipe} from "./pipes/constitution-pipe";
 
 @NgModule({
     imports: [
@@ -29,7 +30,8 @@ import {WarriorDetailComponent} from "./warrior/warrior-detail.component";
         TokenSearchComponent,
         KindredDetailComponent,
         WarriorsComponent,
-        WarriorDetailComponent
+        WarriorDetailComponent,
+        ConstitutionPipe
     ],
     bootstrap: [AppComponent],
     providers: [

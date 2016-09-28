@@ -7,4 +7,5 @@ export class Profile {
     fortitude: number;
     authority: number;
     temper: number;
+    constitution_markers: number[];
 }

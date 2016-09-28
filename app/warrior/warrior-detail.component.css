@@ -1,12 +1,56 @@
 table {
     width: 80%;
     vertical-align: middle;
-    border: thin;
-    border-style: solid;
+    border: thin solid;
 }
 
 td {
     width: 10%;
     vertical-align: middle;
     text-align: center;
+}
+
+.profile {
+    background-color: lightgoldenrodyellow;
+    border: thin solid;
+}
+
+.profile td {
+    border: thin solid;
+}
+
+.constitution-track {
+    text-align: left;
+}
+
+.constitution-track table {
+    border: thin solid;
+}
+
+.constitution-track table tr td {
+    border: thin solid;
+    width: 1%;
+    max-width: 1%;
+}
+
+.marker {
+    background-color: yellow;
+}
+
+.flex-item {
+    flex-grow: 1;
+    border-radius: 1px;
+    border: thin solid black;
+    width: 25px;
+    max-width: 25px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.breaker {
+    display: flex;
 }
