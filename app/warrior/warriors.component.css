@@ -1,6 +1,6 @@
 [class*='col-'] {
-    padding-right: 20px;
-    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
 }
 
 [class*='col-']:last-of-type {
@@ -11,16 +11,23 @@
     margin: 0;
 }
 
+.container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
 .col-1-4 {
-    width: 25%;
+    flex-grow: 1;
 }
 
 .module {
     padding: 20px;
     text-align: center;
     color: #eee;
-    max-height: 120px;
-    min-width: 120px;
+    max-height: 30px;
+    height: 30px;
+    width: 120px;
+    max-width: 120px;
     background-color: #607D8B;
     border-radius: 2px;
 }

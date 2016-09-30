@@ -1,6 +1,8 @@
-<div *ngFor="let warrior of warriors | async" class="col-1-4"
-     (click)="gotoDetail(warrior)">
-  <div class="module kindred">
-    {{warrior.name}}
+<div class="container">
+  <div *ngFor="let warrior of warriors | async" class="col-1-4"
+       (click)="gotoDetail(warrior)">
+    <div class="module kindred">
+      {{warrior.name}}
+    </div>
   </div>
 </div>
