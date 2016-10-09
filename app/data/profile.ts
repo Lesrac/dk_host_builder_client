@@ -1,4 +1,5 @@
 import {SpecialRule} from "./special-rule";
+import {Miniature} from "./miniature";
 export class Profile {
     id: number;
     pace: number;
@@ -10,4 +11,5 @@ export class Profile {
     temper: number;
     constitution_markers: number[];
     specialRules: SpecialRule[];
+    miniatures: Miniature[];
 }
