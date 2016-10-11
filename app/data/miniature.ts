@@ -4,4 +4,7 @@
 export class Miniature {
     id: number;
     image: string;
+    name: string;
+    articlenumber: string;
+    link: string;
 }

@@ -1,8 +1,10 @@
 <div class="container">
   <div *ngFor="let warrior of warriors | async" class="col-1-4"
        (click)="gotoDetail(warrior)">
-    <div class="module kindred">
+    <div class="module">
       {{warrior.name}}
+      <img *ngIf="warrior.profile.miniatures[0]" [src]="'data:image/jpg;base64,' +
+      warrior.profile.miniatures[0].image" width="100" height="100"/>
     </div>
   </div>
 </div>

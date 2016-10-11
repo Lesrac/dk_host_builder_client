@@ -107,8 +107,21 @@
     <tr *ngIf="warrior.uniteSizeMax > 5">
       <td class="constitution-track">More than 5</td>
     </tr>
+    <tr>
+      <td colspan="10">
+        <div class="container">
+          <div class="container miniature" *ngFor="let m of warrior.profile.miniatures">
+            <a [href]="m.link">
+              <span>{{m.articlenumber}}</span>
+              <span>{{m.name}}</span>
+              <p>
+                <img *ngIf="m.image" [src]="'data:image/jpg;base64,' + m.image" width="100" height="100"/>
+              </p>
+            </a>
+          </div>
+        </div>
+      </td>
+    </tr>
   </table>
-  <img *ngIf="warrior.profile.miniatures[0]" [src]="'data:image/jpg;base64,' + warrior.profile.miniatures[0].image"
-       width="100" height="100"/>
   <button (click)="goBack()">Back</button>
 </div>

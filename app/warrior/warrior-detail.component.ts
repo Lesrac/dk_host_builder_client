@@ -4,6 +4,7 @@ import {Params, ActivatedRoute} from "@angular/router";
 import {Warrior} from "../data/warrior";
 import {WarriorUbiquity} from "../data/warrior-ubiquity";
 import {Realm} from "../data/realm";
+import {Miniature} from "../data/miniature";
 
 @Component({
     selector: 'my-warrior-detail',

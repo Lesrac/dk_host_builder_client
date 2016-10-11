@@ -2,7 +2,6 @@
 <ul class="kindreds">
   <li *ngFor="let kindred of kindreds"
       (click)="gotoDetail(kindred)">
-    <span class="badge">{{kindred.id}}</span>
     <span>{{kindred.name}}</span>
   </li>
 </ul>

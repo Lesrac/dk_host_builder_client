@@ -48,6 +48,18 @@ td {
     flex-flow: row wrap;
 }
 
+.container .miniature {
+    overflow: auto;
+}
+
+img {
+    display: none;
+}
+
+.container .miniature:hover img {
+    display: block;
+}
+
 .marker {
     background-color: yellow;
 }
