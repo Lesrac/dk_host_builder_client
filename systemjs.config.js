@@ -31,7 +31,7 @@
         defaultExtension: 'js'
       },
       rxjs: {
-        main: '/bundles/Rx.umd.js',
+        main: 'bundles/Rx.min.js',
         defaultExtension: 'js'
       }
     }
