@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 import {DarklandsService} from "../services/darklands.service";
 import {Warrior} from "../data/warrior";
@@ -11,16 +11,13 @@ import {Router} from "@angular/router";
     templateUrl: 'app/warrior/warriors.component.html',
     styleUrls: ['app/warrior/warriors.component.css']
 })
-export class WarriorsComponent implements OnInit {
+export class WarriorsComponent {
     @Input()
     warriors: Observable<Warrior[]>;
 
     constructor(private router: Router,
                 private darklandsService: DarklandsService) {
 
-    }
-
-    ngOnInit(): void {
     }
 
     gotoDetail(warrior: Warrior): void {
