@@ -5,6 +5,8 @@ import {WarriorClass} from "./warrior-class";
 import {WarriorUbiquity} from "./warrior-ubiquity";
 import {Privilege} from "./privilege";
 import {Acuity} from "./acuity";
+import {Armour} from "./armour";
+import {CombatWeapon} from "./combat-weapon";
 export class Warrior {
     id: number;
     name: string;
@@ -30,4 +32,7 @@ export class Warrior {
 
     warriorClass: WarriorClass[];
 
+    armours: Armour[];
+
+    combatWeapons: CombatWeapon[];
 }

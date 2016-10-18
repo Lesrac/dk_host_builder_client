@@ -107,11 +107,99 @@
     <tr *ngIf="warrior.uniteSizeMax > 5">
       <td class="constitution-track">More than 5</td>
     </tr>
+
+
+    <tr>
+      <td colspan="2">COMBAT WEAPON</td>
+      <td>Attack Dice</td>
+      <td>
+        <table>
+          <tr>
+            <td>Weapon+</td>
+            <td>M+W</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>Attack Range</td>
+            <td>Charge+</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>M+W+Ch</td>
+            <td></td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>Wound+</td>
+            <td>Hands</td>
+          </tr>
+        </table>
+      </td>
+      <td> Class</td>
+      <td colspan="2">Weapon Rules</td>
+    </tr>
+
+    <tr *ngFor="let combatWeapon of warrior.combatWeapons">
+      <td colspan="2">
+        <span>{{combatWeapon.equipment.name}}</span>
+        <span>{{combatWeapon.equipment.equipmentType.name}}</span>
+      </td>
+      <td>{{combatWeapon.attackDice}}</td>
+      <td>
+        <table>
+          <tr>
+            <td>{{combatWeapon.weaponPlus}}</td>
+            <td>{{combatWeapon.mAndW}}</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>{{combatWeapon.attackRange}}</td>
+            <td>{{combatWeapon.chargePlus}}</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>{{combatWeapon.mAndWAndCh}}</td>
+            <td></td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>{{combatWeapon.woundPlus}}</td>
+            <td>{{combatWeapon.equipment.hands}}</td>
+          </tr>
+        </table>
+      </td>
+      <td>{{combatWeapon.equipment.equipmentClass.name}}</td>
+      <td colspan="2"></td>
+    </tr>
+
+    <tr>
+      <my-armour [armours]="warrior.armours"></my-armour>
+    </tr>
+
+
     <tr>
       <td colspan="10">
         <div class="container">
           <div class="container miniature" *ngFor="let m of warrior.profile.miniatures">
-            <a [href]="m.link">
+            <a [href]="m.link" target="_blank">
               <span>{{m.articlenumber}}</span>
               <span>{{m.name}}</span>
               <p>

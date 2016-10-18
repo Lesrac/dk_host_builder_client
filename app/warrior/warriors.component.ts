@@ -1,6 +1,5 @@
 import {Component, Input} from '@angular/core';
 
-import {DarklandsService} from "../services/darklands.service";
 import {Warrior} from "../data/warrior";
 import {Observable} from "rxjs";
 import {Router} from "@angular/router";
@@ -15,8 +14,7 @@ export class WarriorsComponent {
     @Input()
     warriors: Observable<Warrior[]>;
 
-    constructor(private router: Router,
-                private darklandsService: DarklandsService) {
+    constructor(private router: Router) {
 
     }
 

@@ -16,6 +16,8 @@ import {KindredDetailComponent} from "./kindred/kindred-detail.component";
 import {WarriorsComponent} from "./warrior/warriors.component";
 import {WarriorDetailComponent} from "./warrior/warrior-detail.component";
 import {NumberToArrayPipe} from "./pipes/number-to-array-pipe";
+import {ArmourComponent} from "./warrior/equipment/armour.component";
+import {CombatWeaponComponent} from "./warrior/equipment/combat-weapon.component";
 
 @NgModule({
     imports: [
@@ -31,7 +33,9 @@ import {NumberToArrayPipe} from "./pipes/number-to-array-pipe";
         KindredDetailComponent,
         WarriorsComponent,
         WarriorDetailComponent,
-        NumberToArrayPipe
+        NumberToArrayPipe,
+        ArmourComponent,
+        CombatWeaponComponent
     ],
     bootstrap: [AppComponent],
     providers: [
