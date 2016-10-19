@@ -109,7 +109,7 @@
     </tr>
 
 
-    <tr *ngIf="warrior.combatWeapons">
+    <tr *ngIf="warrior.combatWeapons.length > 0">
       <td colspan="2">COMBAT WEAPON</td>
       <td>Attack Dice</td>
       <td>
@@ -155,7 +155,7 @@
       </td>
       <td class="constitution-track">
         <div class="container">
-          <div *ngFor="let i of combatWeapon.attackDice | numberToArrayPipe" class="lex-item">
+          <div *ngFor="let i of combatWeapon.attackDice | numberToArrayPipe" class="flex-item">
             {{i}}
           </div>
         </div>
@@ -196,7 +196,7 @@
       <td colspan="2"></td>
     </tr>
 
-    <tr *ngIf="warrior.armours">
+    <tr *ngIf="warrior.armours.length > 0">
       <td colspan="2">ARMOUR</td>
       <td></td>
       <td>
@@ -250,7 +250,7 @@
       <td colspan="2"></td>
     </tr>
 
-    <tr *ngIf="warrior.shotWeapons">
+    <tr *ngIf="warrior.shotWeapons.length > 0">
       <td colspan="2">SHOT WEAPON</td>
       <td>Shoot Dice</td>
       <td>
@@ -296,7 +296,7 @@
       </td>
       <td class="constitution-track">
         <div class="container">
-          <div *ngFor="let i of shotWeapon.shootDice | numberToArrayPipe" class="lex-item">
+          <div *ngFor="let i of shotWeapon.shootDice | numberToArrayPipe" class="flex-item">
             {{i}}
           </div>
         </div>
