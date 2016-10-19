@@ -7,6 +7,7 @@ import {Privilege} from "./privilege";
 import {Acuity} from "./acuity";
 import {Armour} from "./armour";
 import {CombatWeapon} from "./combat-weapon";
+import {ShotWeapon} from "./shot-weapon";
 export class Warrior {
     id: number;
     name: string;
@@ -35,4 +36,6 @@ export class Warrior {
     armours: Armour[];
 
     combatWeapons: CombatWeapon[];
+
+    shotWeapons: ShotWeapon[];
 }

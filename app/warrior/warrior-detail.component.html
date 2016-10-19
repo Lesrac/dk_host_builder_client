@@ -109,7 +109,7 @@
     </tr>
 
 
-    <tr>
+    <tr *ngIf="warrior.combatWeapons">
       <td colspan="2">COMBAT WEAPON</td>
       <td>Attack Dice</td>
       <td>
@@ -153,7 +153,13 @@
         <span>{{combatWeapon.equipment.name}}</span><br/>
         <span class="smalltext">{{combatWeapon.equipment.equipmentType.name}}</span>
       </td>
-      <td>{{combatWeapon.attackDice}}</td>
+      <td class="constitution-track">
+        <div class="container">
+          <div *ngFor="let i of combatWeapon.attackDice | numberToArrayPipe" class="lex-item">
+            {{i}}
+          </div>
+        </div>
+      </td>
       <td>
         <table>
           <tr>
@@ -190,10 +196,146 @@
       <td colspan="2"></td>
     </tr>
 
-    <tr>
-      <my-armour [armours]="warrior.armours"></my-armour>
+    <tr *ngIf="warrior.armours">
+      <td colspan="2">ARMOUR</td>
+      <td></td>
+      <td>
+        <table>
+          <tr>
+            <td>Armour+</td>
+            <td>C+A</td>
+          </tr>
+        </table>
+      </td>
+      <td colspan="2">
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>Wound-</td>
+            <td>Hands</td>
+          </tr>
+        </table>
+      </td>
+      <td> Class</td>
+      <td colspan="2">Armour Rules</td>
     </tr>
 
+    <tr *ngFor="let armour of warrior.armours">
+      <td colspan="2">
+        <span>{{armour.equipment.name}}</span><br/>
+        <span class="smalltext">{{armour.equipment.equipmentType.name}}</span>
+      </td>
+      <td>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>{{armour.armourPlus}}</td>
+            <td>{{armour.cAndA}}</td>
+          </tr>
+        </table>
+      </td>
+      <td colspan="2">
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>{{armour.woundMinus}}</td>
+            <td>{{armour.equipment.hands}}</td>
+          </tr>
+        </table>
+      </td>
+      <td>{{armour.equipment.equipmentClass.name}}</td>
+      <td colspan="2"></td>
+    </tr>
+
+    <tr *ngIf="warrior.shotWeapons">
+      <td colspan="2">SHOT WEAPON</td>
+      <td>Shoot Dice</td>
+      <td>
+        <table>
+          <tr>
+            <td>Gaze Damage</td>
+            <td>Glance Damage</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>Minimum Range</td>
+            <td>Lethal Range</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>Effective Range</td>
+            <td>Maximum Range</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>Wound+</td>
+            <td>Hands</td>
+          </tr>
+        </table>
+      </td>
+      <td> Class</td>
+      <td colspan="2">Weapon Rules</td>
+    </tr>
+
+    <tr *ngFor="let shotWeapon of warrior.shotWeapons">
+      <td colspan="2">
+        <span>{{shotWeapon.equipment.name}}</span><br/>
+        <span class="smalltext">{{shotWeapon.equipment.equipmentType.name}}</span>
+      </td>
+      <td class="constitution-track">
+        <div class="container">
+          <div *ngFor="let i of shotWeapon.shootDice | numberToArrayPipe" class="lex-item">
+            {{i}}
+          </div>
+        </div>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>{{shotWeapon.gazeDamage}}</td>
+            <td>{{shotWeapon.glanceDamage}}</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>{{shotWeapon.minimumRange}}</td>
+            <td>{{shotWeapon.lethalRange}}</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>{{shotWeapon.effectiveRange}}</td>
+            <td>{{shotWeapon.maximumRange}}</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>{{shotWeapon.woundPlus}}</td>
+            <td>{{shotWeapon.equipment.hands}}</td>
+          </tr>
+        </table>
+      </td>
+      <td>{{shotWeapon.equipment.equipmentClass.name}}</td>
+      <td colspan="2"></td>
+    </tr>
 
     <tr>
       <td colspan="10">
