@@ -40,6 +40,10 @@ export class KindredDetailComponent implements OnInit {
             .then(warriors => this.warriors = Observable.of(warriors));
     }
 
+    buildHost(): void {
+        
+    }
+
     goBack(): void {
         window.history.back();
     }

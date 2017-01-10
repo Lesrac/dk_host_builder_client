@@ -1,5 +1,6 @@
 <div *ngIf="kindred">
   <h2>{{kindred.name}}</h2>
+  <button (click)="buildHost()">Build Host</button>
   <div>
     <my-warriors [warriors]="warriors"></my-warriors>
   </div>

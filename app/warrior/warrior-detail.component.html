@@ -105,7 +105,14 @@
       </td>
     </tr>
     <tr *ngIf="warrior.uniteSizeMax > 5">
-      <td class="constitution-track">More than 5</td>
+      <td colspan="10" class="constitution-track">
+        <div class="container" *ngFor="let i of warrior.uniteSizeMax | numberToArrayPipe">
+          <div *ngFor="let i of warrior.profile.constitution | numberToArrayPipe" [class]="getStyle(i)">
+            {{i}}
+          </div>
+          <div class="filler"> {{warrior.name}} {{i}}</div>
+        </div>
+      </td>
     </tr>
 
 
