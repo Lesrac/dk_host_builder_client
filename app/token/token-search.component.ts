@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable, Subject} from "rxjs";
+import {Observable} from "rxjs/Observable";
+import {Subject} from "rxjs/Subject";
 
 import {TokenSearchService} from "../services/token-search.service";
 import {Token} from "../data/token";
