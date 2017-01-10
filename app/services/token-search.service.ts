@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Http, Response, URLSearchParams} from "@angular/http";
-import {Observable} from "rxjs";
+import {Observable} from "rxjs/Observable";
 import {Warrior} from "../data/warrior";
 import {Token} from "../data/token";
 

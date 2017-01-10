@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 
 import {Warrior} from "../data/warrior";
-import {Observable} from "rxjs";
+import {Observable} from "rxjs/Observable";
 import {Router} from "@angular/router";
 
 

@@ -4,7 +4,7 @@ import {Kindred} from "../data/kindred";
 import {DarklandsService} from "../services/darklands.service";
 import {ActivatedRoute, Params} from "@angular/router";
 import {Warrior} from "../data/warrior";
-import {Observable} from "rxjs";
+import {Observable} from "rxjs/Observable";
 
 @Component({
     selector: 'my-kindred-detail',
